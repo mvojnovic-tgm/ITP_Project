@@ -36,6 +36,10 @@ public class NewBehaviourScript : MonoBehaviour {
 
         }
         movex = Input.GetAxis("Horizontal");
-        rgbdy.velocity = new Vector2(Speed*movex, GetComponent<Rigidbody2D>().velocity.y);
+        rgbdy.velocity = new Vector2(Speed*movex, rgbdy.velocity.y);
+        if(rgbdy.velocity.y < 0)
+        {
+            rgbdy.velocity = new Vector2(Speed * movex, rgbdy.velocity.y*1.03f);
+        }
     }
 }
