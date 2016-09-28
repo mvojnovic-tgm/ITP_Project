@@ -36,7 +36,7 @@ public class NewBehaviourScript : MonoBehaviour {
         //MOVEMENT JUMP
         if (Input.GetKey(KeyCode.Space) && rgbdy.velocity.y == 0)
         {
-            movey = 4 ;
+            movey = 6 ;
             rgbdy.velocity = new Vector2(Speed * movex, movey);
         }else if(rgbdy.velocity.y > 0)
         {
