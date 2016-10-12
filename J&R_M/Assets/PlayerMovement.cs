@@ -16,7 +16,7 @@ public class PlayerMovement: MonoBehaviour {
         rgbdy.fixedAngle = true;
         pause = false;
         mode = "player";
-        //gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("dirt", typeof(Sprite)) as Sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/random_thing", typeof(Sprite)) as Sprite;
     }
 
 
