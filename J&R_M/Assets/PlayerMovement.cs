@@ -16,7 +16,7 @@ public class PlayerMovement: MonoBehaviour {
         rgbdy.fixedAngle = true;
         pause = false;
         mode = "player";
-        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/random_thing", typeof(Sprite)) as Sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/character3", typeof(Sprite)) as Sprite;
     }
 
 
@@ -84,7 +84,7 @@ public class PlayerMovement: MonoBehaviour {
             //MOVEMENT JUMP
             if (Input.GetKey(KeyCode.Space) && rgbdy.velocity.y == 0)
             {
-                rgbdy.AddForce(new Vector2(0, 0.00055f), ForceMode2D.Impulse);
+                rgbdy.AddForce(new Vector2(0, 0.0006f), ForceMode2D.Impulse);
             }
             movex = Input.GetAxis("Horizontal");
             rgbdy.velocity = new Vector2(Speed * movex, rgbdy.velocity.y);
