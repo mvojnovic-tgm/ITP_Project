@@ -7,12 +7,14 @@ public class GODMODE : MonoBehaviour {
     public GameObject brick;
     public GameObject ice;
     public GameObject sand;
-    public GameObject inUse;
-    public string status;
+    private GameObject inUse;
+    private GameObject character;
+    private string status;
 
 	// Use this for initialization
 	void Start () {
         status = "nothing";
+        
 	}
 	
 	// Update is called once per frame
@@ -28,24 +30,7 @@ public class GODMODE : MonoBehaviour {
                 {
                     status = "nothing";
                 }
-                if (status.Equals("selected"))
-                {
-                    if (Input.GetKey(KeyCode.RightArrow)){
-                        moveBlock(92, 0);
-                    }
-                    if (Input.GetKey(KeyCode.LeftArrow))
-                    {
-                        moveBlock(-92, 0);
-                    }
-                    if (Input.GetKey(KeyCode.UpArrow))
-                    {
-                        moveBlock(0, 92);
-                    }
-                    if (Input.GetKey(KeyCode.DownArrow))
-                    {
-                        moveBlock(0, -92);
-                    }
-                }
+               
             }
 	}
     
