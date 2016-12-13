@@ -7,13 +7,17 @@ public class GODMODE : MonoBehaviour {
     public GameObject brick;
     public GameObject ice;
     public GameObject sand;
-    private GameObject inUse;
-    private GameObject character;
+    public GameObject grass;
+    public GameObject water;
+    public GameObject lava;
+    public GameObject character;
     private string status;
+    private move_P mp;
 
 	// Use this for initialization
 	void Start () {
         status = "nothing";
+        print("to use blocks press x");
         
 	}
 	
@@ -23,15 +27,58 @@ public class GODMODE : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.X))
                 {
-                    status = "selected";
-                    useBlock("Blackblock");
-                }
-                if (Input.GetKey(KeyCode.Y))
-                {
-                    status = "nothing";
+                    status = "select";
+                    print("f1 = blackblock ; f2 = dirt ; f3 = sand ; f4 = brick ; f5 = ice ; f6 = character");
                 }
                
-            }
+            }else if(status.Equals("select")){
+                if (Input.GetKey(KeyCode.F1))
+                {
+                    useBlock("blackblock");
+                    print("to move sue arrow keys, to place use z");   
+                }
+                else if (Input.GetKey(KeyCode.F2))
+                {
+                    useBlock("dirt");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if(Input.GetKey(KeyCode.F3))
+                {
+                    useBlock("sand");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if (Input.GetKey(KeyCode.F4))
+                {
+                    useBlock("brick");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if (Input.GetKey(KeyCode.F5))
+                {
+                    useBlock("ice");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if (Input.GetKey(KeyCode.F6))
+                {
+                    useBlock("grass");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if (Input.GetKey(KeyCode.F7))
+                {
+                    useBlock("water");
+                    print("to move sue arrow keys, to place use z");
+                }
+                else if (Input.GetKey(KeyCode.F8))
+                {
+                    useBlock("lava");
+                    print("to move sue arrow keys, to place use z");
+                }
+            else if (Input.GetKey(KeyCode.S))
+                {
+                    useBlock("character");
+                    print("to move sue arrow keys, to place use z");
+                }
+
+        }
 	}
     
     void setCharacterSprite(string character)
@@ -43,19 +90,43 @@ public class GODMODE : MonoBehaviour {
     {
         switch (bName)
         {
-            case "Blackblock": Instantiate(blackblock);
-                inUse = blackblock;
+            case "blackblock":
+                Instantiate(blackblock);
+                Destroy(gameObject);
                 break;
-            case "dirt": Instantiate(dirt);
+            case "dirt":
+                Instantiate(dirt);
+                Destroy(gameObject);
                 break;
-            default:
+            case "sand":
+                Instantiate(sand);
+                Destroy(gameObject);
                 break;
+            case "brick":
+                Instantiate(brick);
+                Destroy(gameObject);
+                break;
+            case "ice":
+                Instantiate(ice);
+                Destroy(gameObject);
+                break;
+            case "grass":
+                Instantiate(grass);
+                Destroy(gameObject);
+                break;
+            case "water":
+                Instantiate(water);
+                Destroy(gameObject);
+                break;
+            case "lava":
+                Instantiate(lava);
+                Destroy(gameObject);
+                break;
+            case "character":
+                Instantiate(character);
+                Destroy(gameObject);
+                break;
+
         }
-    }
-
-    void moveBlock(int x, int y)
-    {
-        inUse.transform.position = new Vector3(x, y, transform.position.z);
-
     }
 }

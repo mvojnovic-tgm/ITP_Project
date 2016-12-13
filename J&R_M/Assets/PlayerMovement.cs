@@ -9,23 +9,26 @@ public class PlayerMovement: MonoBehaviour {
     private Rigidbody2D rgbdy;
     private bool pause;
     private string mode;
+    public Camera pc;
 
     // Use this for initialization
     void Start() {
+        Camera c = (Camera)Instantiate(pc, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, -1), gameObject.transform.rotation);
+        c.transform.parent = gameObject.transform;
         rgbdy = GetComponent<Rigidbody2D>();
         rgbdy.fixedAngle = true;
         pause = false;
         mode = "player";
-        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/character3", typeof(Sprite)) as Sprite;
+        //gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/character3", typeof(Sprite)) as Sprite;
     }
 
 
 
     //HOW TO SET THE SPRITE
-    void setSprite(string text)
-    {
-        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("dirt", typeof(Sprite)) as Sprite;
-    }
+    //void setSprite(string text)
+    //{
+        //gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("dirt", typeof(Sprite)) as Sprite;
+    //}
 
     // Update is called once per frame
     void Update() {
