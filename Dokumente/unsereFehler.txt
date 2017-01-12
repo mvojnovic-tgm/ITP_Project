@@ -1,12 +1,14 @@
-
+1.1-fertig
 
 1.2
 	Koplett
-
+1.5 -fertig
 	
 1.6
 	
 
+1.7 -fetig
+	Loeschen
 
 1.8
 	Meilensteine Kennzeichnen
