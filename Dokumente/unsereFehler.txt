@@ -1,0 +1,34 @@
+1.1
+	Produktziehl spezifizieren
+	Nicht-Ziele!
+	Personal Kosten
+
+1.2
+	Koplett
+
+1.5
+	Ausfuellen
+	
+1.6
+	
+
+1.7
+	Loeschen
+
+1.8
+	Meilensteine Kennzeichnen
+
+1.9
+	Nur fuer nicht selbstverstaendliche Arbeitspakete
+	Richtige Nummeriering
+
+1.10
+	Arbeitspakete fallen weg
+
+1.14
+	KOSTEN
+
+1.15
+	Termine und Ortlichkeiten ausfuellen
+	Kein Subteam
+	
