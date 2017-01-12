@@ -1,6 +1,6 @@
 1.1-fertig
 
-1.2
+1.2 -fertig
 	Koplett
 1.5 -fertig
 	
