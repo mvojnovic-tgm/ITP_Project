@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement: MonoBehaviour {
 
+    public string skin;
+
     private float Speed = 8f;
     private float movex = 0f;
     private float movey = 0f;
@@ -10,6 +12,7 @@ public class PlayerMovement: MonoBehaviour {
     private bool pause;
     private string mode;
     public Camera pc;
+    private string skinNow;
 
     // Use this for initialization
     void Start() {
@@ -19,7 +22,8 @@ public class PlayerMovement: MonoBehaviour {
         rgbdy.fixedAngle = true;
         pause = false;
         mode = "player";
-        //gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load("psd/Characters/character3", typeof(Sprite)) as Sprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load(skin, typeof(Sprite)) as Sprite;
+        skinNow = skin;
     }
 
 
@@ -62,13 +66,17 @@ public class PlayerMovement: MonoBehaviour {
         if (mode == "player")
         {
             //MOVEMENT LEFT RIGHT
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
+                skinNow = skin + "left";
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load(skinNow, typeof(Sprite)) as Sprite;
                 movex = movex - 1;
                 print("links");
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
+                skinNow = skin + "right";
+                gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load(skinNow, typeof(Sprite)) as Sprite;
                 movex = movex + 1;
                 print("rechts");
             }
