@@ -42,15 +42,13 @@ public class PlayerMovement: MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            if (pause == true)
+            foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
             {
-                mode = "player";
-                pause = false;
-            }
-            else
-            {
-                mode = "god";
-                pause = true;
+                if (o.name == "GOD")
+                {
+                    o.GetComponent<GODMODE>().enabled = true;
+                    Destroy(gameObject);
+                }
             }
         }
         if (pause == false)
